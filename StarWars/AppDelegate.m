@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "PARCharacterViewController.h"
+#import "PARStarWarsCharacter.h"
 
 @implementation AppDelegate
 
@@ -17,6 +19,23 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor yellowColor];
     [self.window makeKeyAndVisible];
+    
+    // Creo el modelo
+    NSURL *vaderURL = [NSURL URLWithString:@"http://google.com"];
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSData *vaderSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"c3po"withExtension:@"caf"]];
+    UIImage *vaderImage = [UIImage imageNamed:@"c3po.jpg"];
+    PARStarWarsCharacter *c3po = [PARStarWarsCharacter starWarsCharacterWithName:@"Anakin Skywalker"
+                                                                           alias:@"Darth Vader"
+                                                                             url:vaderURL
+                                                                           sound:vaderSound
+                                                                           image:vaderImage];
+    // Creo el controlador
+    PARCharacterViewController *c3poVC = [[PARCharacterViewController alloc] initWithModel:c3po];
+    
+    // Muestro vista en pantalla
+    [self.window setRootViewController:c3poVC];
+    
     return YES;
 }
 
