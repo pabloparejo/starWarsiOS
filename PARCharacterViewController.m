@@ -16,6 +16,7 @@
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = model;
         _player = [CafPlayer cafPlayer];
+        self.title = model.alias;
 
     }
     return self;
@@ -29,6 +30,9 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // Eliminamos comportamiento por defecto iOS7
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     //Sincronizar modelo con la vista
     self.photoView.image = self.model.photo;

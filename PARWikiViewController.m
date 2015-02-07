@@ -19,6 +19,7 @@
     
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = model;
+        self.title = @"Wiki";
     }
     return self;
 }
@@ -26,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Eliminamos comportamiento por defecto iOS7
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // Sincronizar modelo con vista
     self.browser.delegate = self;

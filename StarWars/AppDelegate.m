@@ -22,23 +22,22 @@
     [self.window makeKeyAndVisible];
     
     // Creo el modelo
-    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Darth_Vader"];
+    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/c3po"];
     NSBundle *bundle = [NSBundle mainBundle];
     NSData *vaderSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"c3po"withExtension:@"caf"]];
     UIImage *vaderImage = [UIImage imageNamed:@"c3po.jpg"];
-    PARStarWarsCharacter *c3po = [PARStarWarsCharacter starWarsCharacterWithName:@"Anakin Skywalker"
-                                                                           alias:@"Darth Vader"
-                                                                             url:vaderURL
-                                                                           sound:vaderSound
-                                                                           image:vaderImage];
+    PARStarWarsCharacter *c3po = [PARStarWarsCharacter starWarsCharacterWithAlias:@"C3PO"                                                                           url:vaderURL                                                                           sound:vaderSound                                                                           image:vaderImage];
     // Creo el controlador
     PARCharacterViewController *c3poVC = [[PARCharacterViewController alloc] initWithModel:c3po];
     
     PARWikiViewController *wikiVC = [[PARWikiViewController alloc] initWithModel:c3po];
-
+    
+    // Creo el combinador
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    [tabVC setViewControllers:@[c3poVC, wikiVC] animated:YES];
     
     // Muestro vista en pantalla
-    [self.window setRootViewController:wikiVC];
+    [self.window setRootViewController:tabVC];
     
     return YES;
 }
