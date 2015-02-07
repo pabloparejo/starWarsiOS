@@ -51,4 +51,12 @@
     [self.player playSoundData:self.model.sound];
 }
 
+- (IBAction)displayWikipedia:(id)sender {
+    PARWikiViewController *wikiVC = [[PARWikiViewController alloc] initWithModel:self.model];
+    [self.navigationController pushViewController:wikiVC
+                                         animated:YES];
+}
+
+
+
 @end

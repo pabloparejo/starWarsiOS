@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "PARCharacterViewController.h"
 #import "PARStarWarsCharacter.h"
-#import "PARWikiViewController.h"
 
 @implementation AppDelegate
 
@@ -30,14 +29,11 @@
     // Creo el controlador
     PARCharacterViewController *c3poVC = [[PARCharacterViewController alloc] initWithModel:c3po];
     
-    PARWikiViewController *wikiVC = [[PARWikiViewController alloc] initWithModel:c3po];
-    
     // Creo el combinador
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
-    [tabVC setViewControllers:@[c3poVC, wikiVC] animated:YES];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:c3poVC];
     
     // Muestro vista en pantalla
-    [self.window setRootViewController:tabVC];
+    [self.window setRootViewController:navVC];
     
     return YES;
 }

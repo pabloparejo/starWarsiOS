@@ -9,6 +9,7 @@
 @import UIKit;
 #import "PARStarWarsCharacter.h"
 #import "CafPlayer.h"
+#import "PARWikiViewController.h"
 
 @interface PARCharacterViewController : UIViewController
 
@@ -19,5 +20,6 @@
 -(id) initWithModel:(PARStarWarsCharacter *) model;
 
 -(IBAction)playSound:(id)sender;
+- (IBAction)displayWikipedia:(id)sender;
 
 @end
