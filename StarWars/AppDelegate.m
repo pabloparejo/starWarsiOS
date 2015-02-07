@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PARCharacterViewController.h"
 #import "PARStarWarsCharacter.h"
+#import "PARWikiViewController.h"
 
 @implementation AppDelegate
 
@@ -21,7 +22,7 @@
     [self.window makeKeyAndVisible];
     
     // Creo el modelo
-    NSURL *vaderURL = [NSURL URLWithString:@"http://google.com"];
+    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Darth_Vader"];
     NSBundle *bundle = [NSBundle mainBundle];
     NSData *vaderSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"c3po"withExtension:@"caf"]];
     UIImage *vaderImage = [UIImage imageNamed:@"c3po.jpg"];
@@ -33,8 +34,11 @@
     // Creo el controlador
     PARCharacterViewController *c3poVC = [[PARCharacterViewController alloc] initWithModel:c3po];
     
+    PARWikiViewController *wikiVC = [[PARWikiViewController alloc] initWithModel:c3po];
+
+    
     // Muestro vista en pantalla
-    [self.window setRootViewController:c3poVC];
+    [self.window setRootViewController:wikiVC];
     
     return YES;
 }

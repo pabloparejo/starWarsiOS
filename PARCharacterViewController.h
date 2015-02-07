@@ -8,13 +8,16 @@
 
 @import UIKit;
 #import "PARStarWarsCharacter.h"
+#import "CafPlayer.h"
 
 @interface PARCharacterViewController : UIViewController
 
 @property (nonatomic, strong) PARStarWarsCharacter *model;
 @property (nonatomic, weak) IBOutlet UIImageView *photoView;
-
+@property (nonatomic, strong) CafPlayer *player;
 
 -(id) initWithModel:(PARStarWarsCharacter *) model;
+
+-(IBAction)playSound:(id)sender;
 
 @end

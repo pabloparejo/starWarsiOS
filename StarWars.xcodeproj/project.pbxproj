@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5077CC01A86031C00A5C89F /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CBF1A86031C00A5C89F /* CafPlayer.m */; };
+		C5077CC51A86103500A5C89F /* PARWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CC31A86103500A5C89F /* PARWikiViewController.m */; };
+		C5077CC61A86103500A5C89F /* PARWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5077CC41A86103500A5C89F /* PARWikiViewController.xib */; };
 		C5FA7EDF1A852CD900041C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EDE1A852CD900041C76 /* main.m */; };
 		C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EE11A852CD900041C76 /* AppDelegate.m */; };
 		C5FA7EE41A852CD900041C76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA7EE31A852CD900041C76 /* Images.xcassets */; };
@@ -44,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5077CBE1A86031C00A5C89F /* CafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafPlayer.h; sourceTree = "<group>"; };
+		C5077CBF1A86031C00A5C89F /* CafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafPlayer.m; sourceTree = "<group>"; };
+		C5077CC21A86103500A5C89F /* PARWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWikiViewController.h; sourceTree = "<group>"; };
+		C5077CC31A86103500A5C89F /* PARWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWikiViewController.m; sourceTree = "<group>"; };
+		C5077CC41A86103500A5C89F /* PARWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWikiViewController.xib; sourceTree = "<group>"; };
 		C5FA7ED91A852CD900041C76 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA7EDD1A852CD900041C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FA7EDE1A852CD900041C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,7 +66,7 @@
 		C5FA7EFD1A8534E700041C76 /* PARStarWarsCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsCharacter.m; sourceTree = "<group>"; };
 		C5FA7F001A853E1D00041C76 /* PARCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARCharacterViewController.h; sourceTree = "<group>"; };
 		C5FA7F011A853E1D00041C76 /* PARCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARCharacterViewController.m; sourceTree = "<group>"; };
-		C5FA7F021A853E1D00041C76 /* PARCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PARCharacterViewController.xib; path = ../PARCharacterViewController.xib; sourceTree = "<group>"; };
+		C5FA7F021A853E1D00041C76 /* PARCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARCharacterViewController.xib; sourceTree = "<group>"; };
 		C5FA7F061A854EE600041C76 /* c3po.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c3po.jpg; sourceTree = "<group>"; };
 		C5FA7F071A854EE600041C76 /* c3po.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = c3po.caf; sourceTree = "<group>"; };
 		C5FA7F081A854EE600041C76 /* chewbacca.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chewbacca.caf; sourceTree = "<group>"; };
@@ -95,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5077CC11A86050C00A5C89F /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				C5077CBE1A86031C00A5C89F /* CafPlayer.h */,
+				C5077CBF1A86031C00A5C89F /* CafPlayer.m */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 		C5FA7ED01A852CD900041C76 = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +133,13 @@
 		C5FA7EDB1A852CD900041C76 /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				C5077CC11A86050C00A5C89F /* Sound */,
 				C5FA7F261A854EF100041C76 /* resources */,
 				C5FA7EE01A852CD900041C76 /* AppDelegate.h */,
 				C5FA7EE11A852CD900041C76 /* AppDelegate.m */,
 				C5FA7F051A853E2900041C76 /* Controllers */,
 				C5FA7EFF1A8534EE00041C76 /* Models */,
 				C5FA7EE31A852CD900041C76 /* Images.xcassets */,
-				C5FA7F021A853E1D00041C76 /* PARCharacterViewController.xib */,
 				C5FA7EE51A852CD900041C76 /* LaunchScreen.xib */,
 				C5FA7EDC1A852CD900041C76 /* Supporting Files */,
 			);
@@ -169,6 +186,10 @@
 			children = (
 				C5FA7F001A853E1D00041C76 /* PARCharacterViewController.h */,
 				C5FA7F011A853E1D00041C76 /* PARCharacterViewController.m */,
+				C5FA7F021A853E1D00041C76 /* PARCharacterViewController.xib */,
+				C5077CC21A86103500A5C89F /* PARWikiViewController.h */,
+				C5077CC31A86103500A5C89F /* PARWikiViewController.m */,
+				C5077CC41A86103500A5C89F /* PARWikiViewController.xib */,
 			);
 			name = Controllers;
 			path = ..;
@@ -281,6 +302,7 @@
 				C5FA7F201A854EE600041C76 /* R2-D2.jpg in Resources */,
 				C5FA7F221A854EE600041C76 /* tarkin.jpg in Resources */,
 				C5FA7F161A854EE600041C76 /* c3po.jpg in Resources */,
+				C5077CC61A86103500A5C89F /* PARWikiViewController.xib in Resources */,
 				C5FA7F1E1A854EE600041C76 /* palpatine.jpg in Resources */,
 				C5FA7F211A854EE600041C76 /* tarkin.caf in Resources */,
 				C5FA7EE71A852CD900041C76 /* LaunchScreen.xib in Resources */,
@@ -315,6 +337,8 @@
 			files = (
 				C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */,
 				C5FA7EDF1A852CD900041C76 /* main.m in Sources */,
+				C5077CC51A86103500A5C89F /* PARWikiViewController.m in Sources */,
+				C5077CC01A86031C00A5C89F /* CafPlayer.m in Sources */,
 				C5FA7F031A853E1D00041C76 /* PARCharacterViewController.m in Sources */,
 				C5FA7EFE1A8534E700041C76 /* PARStarWarsCharacter.m in Sources */,
 			);
@@ -501,6 +525,7 @@
 				C5FA7EF81A852CD900041C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5FA7EF91A852CD900041C76 /* Build configuration list for PBXNativeTarget "StarWarsTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +534,7 @@
 				C5FA7EFB1A852CD900041C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

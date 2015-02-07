@@ -15,6 +15,8 @@
 -(id) initWithModel:(PARStarWarsCharacter *) model{
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = model;
+        _player = [CafPlayer cafPlayer];
+
     }
     return self;
 }
@@ -36,6 +38,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+-(IBAction)playSound:(id)sender{
+    
+    [self.player playSoundData:self.model.sound];
 }
 
 @end
