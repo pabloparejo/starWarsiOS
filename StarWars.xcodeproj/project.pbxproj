@@ -10,6 +10,8 @@
 		C5077CC01A86031C00A5C89F /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CBF1A86031C00A5C89F /* CafPlayer.m */; };
 		C5077CC51A86103500A5C89F /* PARWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CC31A86103500A5C89F /* PARWikiViewController.m */; };
 		C5077CC61A86103500A5C89F /* PARWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5077CC41A86103500A5C89F /* PARWikiViewController.xib */; };
+		C5077CC91A863E6C00A5C89F /* PARStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */; };
+		C5077CCC1A86444100A5C89F /* PARStarWarsUniverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */; };
 		C5FA7EDF1A852CD900041C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EDE1A852CD900041C76 /* main.m */; };
 		C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EE11A852CD900041C76 /* AppDelegate.m */; };
 		C5FA7EE41A852CD900041C76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA7EE31A852CD900041C76 /* Images.xcassets */; };
@@ -52,6 +54,10 @@
 		C5077CC21A86103500A5C89F /* PARWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWikiViewController.h; sourceTree = "<group>"; };
 		C5077CC31A86103500A5C89F /* PARWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWikiViewController.m; sourceTree = "<group>"; };
 		C5077CC41A86103500A5C89F /* PARWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWikiViewController.xib; sourceTree = "<group>"; };
+		C5077CC71A863E6C00A5C89F /* PARStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARStarWarsUniverse.h; sourceTree = "<group>"; };
+		C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverse.m; sourceTree = "<group>"; };
+		C5077CCA1A86444100A5C89F /* PARStarWarsUniverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARStarWarsUniverseViewController.h; sourceTree = "<group>"; };
+		C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverseViewController.m; sourceTree = "<group>"; };
 		C5FA7ED91A852CD900041C76 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA7EDD1A852CD900041C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FA7EDE1A852CD900041C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 			children = (
 				C5FA7EFC1A8534E700041C76 /* PARStarWarsCharacter.h */,
 				C5FA7EFD1A8534E700041C76 /* PARStarWarsCharacter.m */,
+				C5077CC71A863E6C00A5C89F /* PARStarWarsUniverse.h */,
+				C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -190,6 +198,8 @@
 				C5077CC21A86103500A5C89F /* PARWikiViewController.h */,
 				C5077CC31A86103500A5C89F /* PARWikiViewController.m */,
 				C5077CC41A86103500A5C89F /* PARWikiViewController.xib */,
+				C5077CCA1A86444100A5C89F /* PARStarWarsUniverseViewController.h */,
+				C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */,
 			);
 			name = Controllers;
 			path = ..;
@@ -335,7 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5077CCC1A86444100A5C89F /* PARStarWarsUniverseViewController.m in Sources */,
 				C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */,
+				C5077CC91A863E6C00A5C89F /* PARStarWarsUniverse.m in Sources */,
 				C5FA7EDF1A852CD900041C76 /* main.m in Sources */,
 				C5077CC51A86103500A5C89F /* PARWikiViewController.m in Sources */,
 				C5077CC01A86031C00A5C89F /* CafPlayer.m in Sources */,
