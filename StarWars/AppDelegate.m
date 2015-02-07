@@ -18,15 +18,15 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor yellowColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     // Creo el modelo
-    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/c3po"];
+    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/r2d2"];
     NSBundle *bundle = [NSBundle mainBundle];
-    NSData *vaderSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"c3po"withExtension:@"caf"]];
-    UIImage *vaderImage = [UIImage imageNamed:@"c3po.jpg"];
-    PARStarWarsCharacter *c3po = [PARStarWarsCharacter starWarsCharacterWithAlias:@"C3PO"                                                                           url:vaderURL                                                                           sound:vaderSound                                                                           image:vaderImage];
+    NSData *vaderSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"r2-d2"withExtension:@"caf"]];
+    UIImage *vaderImage = [UIImage imageNamed:@"R2-D2.jpg"];
+    PARStarWarsCharacter *c3po = [PARStarWarsCharacter starWarsCharacterWithAlias:@"R2D2"                                                                           url:vaderURL                                                                           sound:vaderSound                                                                           image:vaderImage];
     // Creo el controlador
     PARCharacterViewController *c3poVC = [[PARCharacterViewController alloc] initWithModel:c3po];
     
