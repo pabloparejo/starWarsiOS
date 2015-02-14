@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PARStarWarsUniverseViewController.h"
 #import "UIViewController+Combinators.h"
+#import "PARCharacterViewController.h"
 
 @implementation AppDelegate
 
@@ -36,6 +37,7 @@
     
     // Asigno delegados
     splitVC.delegate = charVC;
+    universeVC.delegate = charVC;
     
     // Muestro vista en pantalla
     [self.window setRootViewController:splitVC];

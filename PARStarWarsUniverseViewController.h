@@ -8,14 +8,28 @@
 
 @import UIKit;
 #import "PARStarWarsUniverse.h"
-#import "PARCharacterViewController.h"
 
 #define IMPERIAL_SECTION 0
 #define REBEL_SECTION 0
 
+
+@class PARStarWarsUniverseViewController;
+
+@protocol PARStarWarsUniverseViewControllerDelegate <NSObject>
+
+@optional
+-(void)starWarsUniverseViewController: (PARStarWarsUniverseViewController *)vc
+                   didSelectCharacter: (PARStarWarsCharacter *) character;
+
+@end
+
+
 @interface PARStarWarsUniverseViewController : UITableViewController
+
+@property (weak, nonatomic) id<PARStarWarsUniverseViewControllerDelegate> delegate;
 
 -(id) initWithModel:(PARStarWarsUniverse *) model
               style:(UITableViewStyle) style;
-
 @end
+
+

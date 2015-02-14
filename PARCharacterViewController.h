@@ -10,8 +10,9 @@
 #import "PARStarWarsCharacter.h"
 #import "CafPlayer.h"
 #import "PARWikiViewController.h"
+#import "PARStarWarsUniverseViewController.h"
 
-@interface PARCharacterViewController : UIViewController <UISplitViewControllerDelegate>
+@interface PARCharacterViewController : UIViewController <UISplitViewControllerDelegate, PARStarWarsUniverseViewControllerDelegate>
 
 @property (nonatomic, strong) PARStarWarsCharacter *model;
 @property (nonatomic, weak) IBOutlet UIImageView *photoView;

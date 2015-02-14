@@ -16,8 +16,6 @@
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = model;
         _player = [CafPlayer cafPlayer];
-        self.title = model.alias;
-
     }
     return self;
 }
@@ -37,12 +35,11 @@
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }
     
+    [self syncViewWithModel];
+    
     
     // Eliminamos comportamiento por defecto iOS7
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    //Sincronizar modelo con la vista
-    self.photoView.image = self.model.photo;
     
 }
 
@@ -73,6 +70,23 @@
         self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
     }
     
+}
+
+#pragma mark - PARStarWarsUniverseViewControllerDelegate
+
+-(void) starWarsUniverseViewController:(PARStarWarsUniverseViewController *)vc didSelectCharacter:(PARStarWarsCharacter *)character{
+    self.model = character;
+    [self syncViewWithModel];
+}
+
+#pragma mark - Utils
+
+-(void) syncViewWithModel{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    //Sincronizar modelo con la vista
+    self.photoView.image = self.model.photo;
+    self.title = self.model.alias;
+
 }
 
 @end

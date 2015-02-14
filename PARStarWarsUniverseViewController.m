@@ -105,9 +105,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         character = [self.model rebelAtIndex:indexPath.row];
     }
     
-    PARCharacterViewController *cVC = [[PARCharacterViewController alloc] initWithModel:character];
+    // Avisamos al delegado
+    if ([self.delegate respondsToSelector:@selector(starWarsUniverseViewController:didSelectCharacter:)]) {
+        
+        [self.delegate starWarsUniverseViewController:self
+                                   didSelectCharacter:character];
+    }
     
-    [self.navigationController pushViewController:cVC animated:YES];
 }
-
 @end
