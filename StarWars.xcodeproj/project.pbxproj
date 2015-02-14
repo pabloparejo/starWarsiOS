@@ -12,6 +12,7 @@
 		C5077CC61A86103500A5C89F /* PARWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5077CC41A86103500A5C89F /* PARWikiViewController.xib */; };
 		C5077CC91A863E6C00A5C89F /* PARStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */; };
 		C5077CCC1A86444100A5C89F /* PARStarWarsUniverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */; };
+		C574D91D1A8F43E4000DEC9D /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C574D91C1A8F43E4000DEC9D /* UIViewController+Combinators.m */; };
 		C5FA7EDF1A852CD900041C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EDE1A852CD900041C76 /* main.m */; };
 		C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EE11A852CD900041C76 /* AppDelegate.m */; };
 		C5FA7EE41A852CD900041C76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FA7EE31A852CD900041C76 /* Images.xcassets */; };
@@ -58,6 +59,8 @@
 		C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverse.m; sourceTree = "<group>"; };
 		C5077CCA1A86444100A5C89F /* PARStarWarsUniverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARStarWarsUniverseViewController.h; sourceTree = "<group>"; };
 		C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverseViewController.m; sourceTree = "<group>"; };
+		C574D91B1A8F43E4000DEC9D /* UIViewController+Combinators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Combinators.h"; sourceTree = "<group>"; };
+		C574D91C1A8F43E4000DEC9D /* UIViewController+Combinators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Combinators.m"; sourceTree = "<group>"; };
 		C5FA7ED91A852CD900041C76 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA7EDD1A852CD900041C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FA7EDE1A852CD900041C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +121,15 @@
 			name = Sound;
 			sourceTree = "<group>";
 		};
+		C574D91A1A8F4377000DEC9D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C574D91B1A8F43E4000DEC9D /* UIViewController+Combinators.h */,
+				C574D91C1A8F43E4000DEC9D /* UIViewController+Combinators.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		C5FA7ED01A852CD900041C76 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +151,7 @@
 		C5FA7EDB1A852CD900041C76 /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				C574D91A1A8F4377000DEC9D /* Categories */,
 				C5077CC11A86050C00A5C89F /* Sound */,
 				C5FA7F261A854EF100041C76 /* resources */,
 				C5FA7EE01A852CD900041C76 /* AppDelegate.h */,
@@ -352,6 +365,7 @@
 				C5077CC51A86103500A5C89F /* PARWikiViewController.m in Sources */,
 				C5077CC01A86031C00A5C89F /* CafPlayer.m in Sources */,
 				C5FA7F031A853E1D00041C76 /* PARCharacterViewController.m in Sources */,
+				C574D91D1A8F43E4000DEC9D /* UIViewController+Combinators.m in Sources */,
 				C5FA7EFE1A8534E700041C76 /* PARStarWarsCharacter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

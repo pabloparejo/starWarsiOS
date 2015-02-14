@@ -31,6 +31,13 @@
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    //DisplayMode por defecto para el SplitVC
+    if (self.splitViewController.displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    }
+    
+    
     // Eliminamos comportamiento por defecto iOS7
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
@@ -57,6 +64,15 @@
                                          animated:YES];
 }
 
+#pragma mark - UISplitViewControllerDelegate
 
+-(void) splitViewController:(UISplitViewController *)svc
+    willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+    if (displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+        self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
+    }
+    
+}
 
 @end

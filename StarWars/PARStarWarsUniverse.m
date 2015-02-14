@@ -8,6 +8,8 @@
 
 #import "PARStarWarsUniverse.h"
 
+
+// Creamos categoría anónima (extensión)
 @interface PARStarWarsUniverse ()
 // No son privados, se declaran aquí para mantener sencillo .h
 @property (nonatomic, strong) NSArray *imperials;

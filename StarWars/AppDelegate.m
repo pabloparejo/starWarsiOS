@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PARStarWarsUniverseViewController.h"
+#import "UIViewController+Combinators.h"
 
 @implementation AppDelegate
 
@@ -22,14 +23,22 @@
     // Creo el modelo
     PARStarWarsUniverse *model = [PARStarWarsUniverse new];
     
-    // Creo el controlador
+    // Creo los controladores
     PARStarWarsUniverseViewController *universeVC = [[PARStarWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
     
+    PARCharacterViewController *charVC = [[PARCharacterViewController alloc]
+                                          initWithModel:[model imperialAtIndex:0]];
+    
     // Creo el combinador
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
+    UISplitViewController *splitVC = [UISplitViewController new];
+    splitVC.viewControllers = @[[universeVC wrappedInNavigationController],
+                                [charVC wrappedInNavigationController]];
+    
+    // Asigno delegados
+    splitVC.delegate = charVC;
     
     // Muestro vista en pantalla
-    [self.window setRootViewController:navVC];
+    [self.window setRootViewController:splitVC];
     
     return YES;
 }
