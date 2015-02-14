@@ -27,7 +27,7 @@
 @end
 
 
-@interface PARStarWarsUniverseViewController : UITableViewController
+@interface PARStarWarsUniverseViewController : UITableViewController <PARStarWarsUniverseViewControllerDelegate>
 
 @property (weak, nonatomic) id<PARStarWarsUniverseViewControllerDelegate> delegate;
 

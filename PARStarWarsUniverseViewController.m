@@ -7,7 +7,7 @@
 //
 
 #import "PARStarWarsUniverseViewController.h"
-
+#import "PARCharacterViewController.h"
 @interface PARStarWarsUniverseViewController ()
 
 @property PARStarWarsUniverse *model;
@@ -116,5 +116,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [[NSNotificationCenter defaultCenter] postNotification:notification];
     
+}
+
+#pragma mark - PARStarWarsUniverseViewControllerDelegate
+-(void) starWarsUniverseViewController:(PARStarWarsUniverseViewController *)vc
+                    didSelectCharacter:(PARStarWarsCharacter *)character{
+    
+    PARCharacterViewController *charVC = [[PARCharacterViewController alloc] initWithModel:character];
+    [self.navigationController pushViewController:charVC animated:YES];
 }
 @end

@@ -24,23 +24,16 @@
     // Creo el modelo
     PARStarWarsUniverse *model = [PARStarWarsUniverse new];
     
-    // Creo los controladores
-    PARStarWarsUniverseViewController *universeVC = [[PARStarWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    // UserInterface Idiom
     
-    PARCharacterViewController *charVC = [[PARCharacterViewController alloc]
-                                          initWithModel:[model imperialAtIndex:0]];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // IPAD
+        [self configureForiPadWithModel:model];
+    }else{
+        [self configureForiPhoneWithModel:model];
+    }
     
-    // Creo el combinador
-    UISplitViewController *splitVC = [UISplitViewController new];
-    splitVC.viewControllers = @[[universeVC wrappedInNavigationController],
-                                [charVC wrappedInNavigationController]];
-    
-    // Asigno delegados
-    splitVC.delegate = charVC;
-    universeVC.delegate = charVC;
-    
-    // Muestro vista en pantalla
-    [self.window setRootViewController:splitVC];
+
     
     return YES;
 }
@@ -67,4 +60,38 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - App Configuration
+-(void) configureForiPadWithModel:model{
+    // Creo los controladores
+    PARStarWarsUniverseViewController *universeVC = [[PARStarWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    
+    PARCharacterViewController *charVC = [[PARCharacterViewController alloc]
+                                          initWithModel:[model imperialAtIndex:0]];
+    
+    // Creo el combinador
+    UISplitViewController *splitVC = [UISplitViewController new];
+    splitVC.viewControllers = @[[universeVC wrappedInNavigationController],
+                                [charVC wrappedInNavigationController]];
+    
+    // Asigno delegados
+    splitVC.delegate = charVC;
+    universeVC.delegate = charVC;
+    
+    // Muestro vista en pantalla
+    [self.window setRootViewController:splitVC];
+}
+
+-(void) configureForiPhoneWithModel:model{
+    // Creo los controladores
+    PARStarWarsUniverseViewController *universeVC = [[PARStarWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+
+    universeVC.delegate = universeVC;
+    
+    UINavigationController *navVC = [universeVC wrappedInNavigationController];
+
+
+    
+    // Muestro vista en pantalla
+    [self.window setRootViewController:navVC];
+}
 @end
