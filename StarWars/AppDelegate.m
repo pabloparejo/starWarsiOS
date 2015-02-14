@@ -10,11 +10,15 @@
 #import "PARStarWarsUniverseViewController.h"
 #import "UIViewController+Combinators.h"
 #import "PARCharacterViewController.h"
+#import "settings.h"
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Defatult settings value
+    [self setDefaultLastCharacter];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -66,7 +70,7 @@
     PARStarWarsUniverseViewController *universeVC = [[PARStarWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
     
     PARCharacterViewController *charVC = [[PARCharacterViewController alloc]
-                                          initWithModel:[model imperialAtIndex:0]];
+                                          initWithModel:[self lastCharacterSelectedInModel:model]];
     
     // Creo el combinador
     UISplitViewController *splitVC = [UISplitViewController new];
@@ -93,5 +97,32 @@
     
     // Muestro vista en pantalla
     [self.window setRootViewController:navVC];
+}
+
+#pragma mark - User Defaults
+-(void) setDefaultLastCharacter{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    if (![def objectForKey:LAST_SELECTED_CHARACTER_KEY]) {
+        // User has open the app for the first time
+        
+        [def setObject:@[@0,@0] forKey:LAST_SELECTED_CHARACTER_KEY];
+        [def synchronize];
+    }
+}
+                                          
+-(PARStarWarsCharacter *) lastCharacterSelectedInModel: (PARStarWarsUniverse *)model{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    NSArray *coords = [def objectForKey:LAST_SELECTED_CHARACTER_KEY];
+    NSUInteger section = [[coords objectAtIndex:0] integerValue];
+    NSUInteger row = [[coords objectAtIndex:1] integerValue];
+    PARStarWarsCharacter *character;
+    if (section == IMPERIAL_SECTION) {
+        character = [model imperialAtIndex:row];
+    }else{
+        character = [model rebelAtIndex:row];
+    }
+    
+    return character;
 }
 @end

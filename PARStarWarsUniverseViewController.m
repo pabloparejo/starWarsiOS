@@ -8,6 +8,7 @@
 
 #import "PARStarWarsUniverseViewController.h"
 #import "PARCharacterViewController.h"
+#import "settings.h"
 @interface PARStarWarsUniverseViewController ()
 
 @property PARStarWarsUniverse *model;
@@ -115,6 +116,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSNotification *notification = [NSNotification notificationWithName:CHARACTER_DID_CHANGE_NOTIFICATION object:self userInfo:dict];
     
     [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
+    NSArray *coords = @[@(indexPath.section), @(indexPath.row)];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def  setObject:coords forKey:LAST_SELECTED_CHARACTER_KEY];
+    [def synchronize];
     
 }
 

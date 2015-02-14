@@ -61,6 +61,7 @@
 		C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverseViewController.m; sourceTree = "<group>"; };
 		C574D91B1A8F43E4000DEC9D /* UIViewController+Combinators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Combinators.h"; sourceTree = "<group>"; };
 		C574D91C1A8F43E4000DEC9D /* UIViewController+Combinators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Combinators.m"; sourceTree = "<group>"; };
+		C5DB76471A8F8327008C546B /* settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = settings.h; sourceTree = "<group>"; };
 		C5FA7ED91A852CD900041C76 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FA7EDD1A852CD900041C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FA7EDE1A852CD900041C76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 				C5FA7EE31A852CD900041C76 /* Images.xcassets */,
 				C5FA7EE51A852CD900041C76 /* LaunchScreen.xib */,
 				C5FA7EDC1A852CD900041C76 /* Supporting Files */,
+				C5DB76471A8F8327008C546B /* settings.h */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
