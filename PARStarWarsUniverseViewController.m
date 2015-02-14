@@ -74,13 +74,11 @@
                                       reuseIdentifier:cellId];
     }
     
-    // configuramos celda
-    
+    // setting up the cell
     cell.imageView.image = character.photo;
     cell.textLabel.text= character.alias;
     cell.detailTextLabel.text = character.name;
     
-    // Devolvemos la celda
     return cell;
 }
 
@@ -105,12 +103,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         character = [self.model rebelAtIndex:indexPath.row];
     }
     
-    // Avisamos al delegado
+    // Message to delegate
     if ([self.delegate respondsToSelector:@selector(starWarsUniverseViewController:didSelectCharacter:)]) {
         
         [self.delegate starWarsUniverseViewController:self
                                    didSelectCharacter:character];
     }
+    
+    // Sending notification
+    NSDictionary *dict = @{CHARACTER_KEY: character};
+    NSNotification *notification = [NSNotification notificationWithName:CHARACTER_DID_CHANGE_NOTIFICATION object:self userInfo:dict];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
     
 }
 @end

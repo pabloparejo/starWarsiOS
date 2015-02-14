@@ -82,7 +82,6 @@
 #pragma mark - Utils
 
 -(void) syncViewWithModel{
-    [self.navigationController popToRootViewControllerAnimated:YES];
     //Sincronizar modelo con la vista
     self.photoView.image = self.model.photo;
     self.title = self.model.alias;

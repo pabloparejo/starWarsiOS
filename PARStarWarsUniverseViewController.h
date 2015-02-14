@@ -12,6 +12,9 @@
 #define IMPERIAL_SECTION 0
 #define REBEL_SECTION 0
 
+#define CHARACTER_DID_CHANGE_NOTIFICATION @"characterDidChange"
+#define CHARACTER_KEY @"character"
+
 
 @class PARStarWarsUniverseViewController;
 

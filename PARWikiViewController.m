@@ -7,6 +7,7 @@
 //
 
 #import "PARWikiViewController.h"
+#import "PARStarWarsUniverseViewController.h"
 
 @interface PARWikiViewController ()
 
@@ -33,9 +34,28 @@
     
     // Sincronizar modelo con vista
     self.browser.delegate = self;
-    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiPage]];
-    self.activity.hidden = NO;
-    [self.activity startAnimating];
+    [self syncViewWithModel];
+}
+
+// CHARACTER_DID_CHANGE_NOTIFICATION
+-(void) notifyThatCharacterDidChange:(NSNotification *)n{
+    self.model = [n.userInfo objectForKey:CHARACTER_KEY];
+    [self syncViewWithModel];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(notifyThatCharacterDidChange:)
+               name:CHARACTER_DID_CHANGE_NOTIFICATION
+             object:nil];
+}
+
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +83,13 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 }
 
+#pragma mark - Utils
 
+-(void) syncViewWithModel{
+    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiPage]];
+    self.activity.hidden = NO;
+    [self.activity startAnimating];
+}
 
 
 @end
