@@ -8,6 +8,7 @@
 
 #import "PARStarWarsUniverseViewController.h"
 #import "PARCharacterViewController.h"
+#import "PARStarWarsTableViewCell.h"
 #import "settings.h"
 @interface PARStarWarsUniverseViewController ()
 
@@ -29,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"Star Wars Universe"];
+    
+    [self registerNibs];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,28 +62,30 @@
           cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PARStarWarsCharacter *character;
-
+    UIImage *sidePhoto = nil;
     if (indexPath.section == IMPERIAL_SECTION) {
         character = [self.model imperialAtIndex:indexPath.row];
+        sidePhoto = [UIImage imageNamed:@"imperial.png"];
     }else{
         character = [self.model rebelAtIndex:indexPath.row];
+        sidePhoto = [UIImage imageNamed:@"alliance.gif"];
     }
     
     // Creamos la celda
-    static NSString *cellId = @"StarWarsCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:cellId];
-    }
+    PARStarWarsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PARStarWarsTableViewCell cellId] forIndexPath:indexPath];
     
     // setting up the cell
-    cell.imageView.image = character.photo;
-    cell.textLabel.text= character.alias;
-    cell.detailTextLabel.text = character.name;
+    cell.characterPhotoView.image = character.photo;
+    cell.aliasView.text= character.alias;
+    cell.nameView.text = character.name;
+    cell.forceSidePhotoView.image = sidePhoto;
     
     return cell;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [PARStarWarsTableViewCell height];
 }
 
 -(NSString *) tableView:(UITableView *)tableView
@@ -94,8 +99,7 @@ titleForHeaderInSection:(NSInteger)section{
 
 #pragma mark - TableView Delegate
 
--(void) tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PARStarWarsCharacter *character;
     if (indexPath.section == IMPERIAL_SECTION) {
@@ -131,4 +135,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     PARCharacterViewController *charVC = [[PARCharacterViewController alloc] initWithModel:character];
     [self.navigationController pushViewController:charVC animated:YES];
 }
+
+
+#pragma mark - Utils
+-(void) registerNibs{
+    UINib *nib = [UINib nibWithNibName:@"PARStarWarsTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:[PARStarWarsTableViewCell cellId]];
+}
+
 @end

@@ -12,6 +12,10 @@
 		C5077CC61A86103500A5C89F /* PARWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5077CC41A86103500A5C89F /* PARWikiViewController.xib */; };
 		C5077CC91A863E6C00A5C89F /* PARStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */; };
 		C5077CCC1A86444100A5C89F /* PARStarWarsUniverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */; };
+		C50B6FA11AA1E557001D3199 /* PARStarWarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C50B6F9F1AA1E557001D3199 /* PARStarWarsTableViewCell.m */; };
+		C50B6FA21AA1E557001D3199 /* PARStarWarsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C50B6FA01AA1E557001D3199 /* PARStarWarsTableViewCell.xib */; };
+		C50B6FA51AA1ED15001D3199 /* alliance.gif in Resources */ = {isa = PBXBuildFile; fileRef = C50B6FA31AA1ED15001D3199 /* alliance.gif */; };
+		C50B6FA61AA1ED15001D3199 /* imperial.png in Resources */ = {isa = PBXBuildFile; fileRef = C50B6FA41AA1ED15001D3199 /* imperial.png */; };
 		C574D91D1A8F43E4000DEC9D /* UIViewController+Combinators.m in Sources */ = {isa = PBXBuildFile; fileRef = C574D91C1A8F43E4000DEC9D /* UIViewController+Combinators.m */; };
 		C5FA7EDF1A852CD900041C76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EDE1A852CD900041C76 /* main.m */; };
 		C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7EE11A852CD900041C76 /* AppDelegate.m */; };
@@ -59,6 +63,11 @@
 		C5077CC81A863E6C00A5C89F /* PARStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverse.m; sourceTree = "<group>"; };
 		C5077CCA1A86444100A5C89F /* PARStarWarsUniverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARStarWarsUniverseViewController.h; sourceTree = "<group>"; };
 		C5077CCB1A86444100A5C89F /* PARStarWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsUniverseViewController.m; sourceTree = "<group>"; };
+		C50B6F9E1AA1E557001D3199 /* PARStarWarsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARStarWarsTableViewCell.h; sourceTree = "<group>"; };
+		C50B6F9F1AA1E557001D3199 /* PARStarWarsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARStarWarsTableViewCell.m; sourceTree = "<group>"; };
+		C50B6FA01AA1E557001D3199 /* PARStarWarsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARStarWarsTableViewCell.xib; sourceTree = "<group>"; };
+		C50B6FA31AA1ED15001D3199 /* alliance.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = alliance.gif; sourceTree = "<group>"; };
+		C50B6FA41AA1ED15001D3199 /* imperial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imperial.png; sourceTree = "<group>"; };
 		C574D91B1A8F43E4000DEC9D /* UIViewController+Combinators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Combinators.h"; sourceTree = "<group>"; };
 		C574D91C1A8F43E4000DEC9D /* UIViewController+Combinators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Combinators.m"; sourceTree = "<group>"; };
 		C5DB76471A8F8327008C546B /* settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = settings.h; sourceTree = "<group>"; };
@@ -122,6 +131,16 @@
 			name = Sound;
 			sourceTree = "<group>";
 		};
+		C50B6F9D1AA1E4BF001D3199 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C50B6F9E1AA1E557001D3199 /* PARStarWarsTableViewCell.h */,
+				C50B6F9F1AA1E557001D3199 /* PARStarWarsTableViewCell.m */,
+				C50B6FA01AA1E557001D3199 /* PARStarWarsTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		C574D91A1A8F4377000DEC9D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +177,7 @@
 				C5077CC11A86050C00A5C89F /* Sound */,
 				C5FA7F261A854EF100041C76 /* resources */,
 				C5FA7F051A853E2900041C76 /* Controllers */,
+				C50B6F9D1AA1E4BF001D3199 /* Views */,
 				C5FA7EFF1A8534EE00041C76 /* Models */,
 				C5FA7EE31A852CD900041C76 /* Images.xcassets */,
 				C5FA7EE51A852CD900041C76 /* LaunchScreen.xib */,
@@ -223,6 +243,8 @@
 		C5FA7F261A854EF100041C76 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				C50B6FA31AA1ED15001D3199 /* alliance.gif */,
+				C50B6FA41AA1ED15001D3199 /* imperial.png */,
 				C5FA7F061A854EE600041C76 /* c3po.jpg */,
 				C5FA7F071A854EE600041C76 /* c3po.caf */,
 				C5FA7F081A854EE600041C76 /* chewbacca.caf */,
@@ -324,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5FA7F1C1A854EE600041C76 /* iconSmall.png in Resources */,
+				C50B6FA21AA1E557001D3199 /* PARStarWarsTableViewCell.xib in Resources */,
 				C5FA7F201A854EE600041C76 /* R2-D2.jpg in Resources */,
 				C5FA7F221A854EE600041C76 /* tarkin.jpg in Resources */,
 				C5FA7F161A854EE600041C76 /* c3po.jpg in Resources */,
@@ -333,9 +356,11 @@
 				C5FA7EE71A852CD900041C76 /* LaunchScreen.xib in Resources */,
 				C5FA7F251A854EE600041C76 /* yoda.jpg in Resources */,
 				C5FA7F1B1A854EE600041C76 /* icon.png in Resources */,
+				C50B6FA51AA1ED15001D3199 /* alliance.gif in Resources */,
 				C5FA7F1A1A854EE600041C76 /* darthVader.jpg in Resources */,
 				C5FA7F241A854EE600041C76 /* yoda.caf in Resources */,
 				C5FA7F1D1A854EE600041C76 /* palpatine.caf in Resources */,
+				C50B6FA61AA1ED15001D3199 /* imperial.png in Resources */,
 				C5FA7F181A854EE600041C76 /* chewbacca.caf in Resources */,
 				C5FA7F1F1A854EE600041C76 /* r2-d2.caf in Resources */,
 				C5FA7F231A854EE600041C76 /* vader.caf in Resources */,
@@ -362,6 +387,7 @@
 			files = (
 				C5077CCC1A86444100A5C89F /* PARStarWarsUniverseViewController.m in Sources */,
 				C5FA7EE21A852CD900041C76 /* AppDelegate.m in Sources */,
+				C50B6FA11AA1E557001D3199 /* PARStarWarsTableViewCell.m in Sources */,
 				C5077CC91A863E6C00A5C89F /* PARStarWarsUniverse.m in Sources */,
 				C5FA7EDF1A852CD900041C76 /* main.m in Sources */,
 				C5077CC51A86103500A5C89F /* PARWikiViewController.m in Sources */,
