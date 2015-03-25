@@ -10,4 +10,12 @@
 
 @interface PARStarWarsTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *characterPhotoView;
+@property (weak, nonatomic) IBOutlet UILabel *aliasView;
+@property (weak, nonatomic) IBOutlet UILabel *nameView;
+@property (weak, nonatomic) IBOutlet UIImageView *forceSidePhotoView;
+
++(NSString*) cellId;
++(CGFloat) height;
+
 @end
