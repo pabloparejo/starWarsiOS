@@ -152,11 +152,11 @@
 		C5FA7EDB1A852CD900041C76 /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				C5FA7EE01A852CD900041C76 /* AppDelegate.h */,
+				C5FA7EE11A852CD900041C76 /* AppDelegate.m */,
 				C574D91A1A8F4377000DEC9D /* Categories */,
 				C5077CC11A86050C00A5C89F /* Sound */,
 				C5FA7F261A854EF100041C76 /* resources */,
-				C5FA7EE01A852CD900041C76 /* AppDelegate.h */,
-				C5FA7EE11A852CD900041C76 /* AppDelegate.m */,
 				C5FA7F051A853E2900041C76 /* Controllers */,
 				C5FA7EFF1A8534EE00041C76 /* Models */,
 				C5FA7EE31A852CD900041C76 /* Images.xcassets */,
