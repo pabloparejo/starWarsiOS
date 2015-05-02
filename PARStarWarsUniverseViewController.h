@@ -10,7 +10,7 @@
 #import "PARStarWarsUniverse.h"
 
 #define IMPERIAL_SECTION 0
-#define REBEL_SECTION 0
+#define REBEL_SECTION 1
 
 #define CHARACTER_DID_CHANGE_NOTIFICATION @"characterDidChange"
 #define CHARACTER_KEY @"character"
